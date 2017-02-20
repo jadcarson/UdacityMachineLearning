@@ -3,11 +3,28 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: Constraint propagation is using constraints imposed on the problem to narrow the possible 
+range for the domain of answers.  You can then use other constraints you have on this smaller 
+domain to potentially narrow it further.  This could then open up some previously used 
+constraints to reduce the possible domain of answers again.  For naked twins, you look for 
+identical sets of 2 possible choices between two peers in the Sudoku grid and then remove those 
+choices from all shared peers.  This is an example of using constraint propagation as you have a 
+constraint, “if a box and its peer have exactly two choices and those choices are identical, 
+no shared peer can be either of those two choices,” and can use it to reduce the domain of 
+possible answers for other boxes.  The boxes that had values removed could then freshly fall 
+under the naked twins constraint and further reduce the domain for the remaining boxes.  
+This could also allow the further use of previously used constraint techniques, such as 
+elimination and only choice.  These in turn could then allow naked twins to be run again 
+with some new twins appearing.
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: For the diagonal Sudoku problem, the constraint propagation used was by using the techniques 
+of elimination and only choice.  These were slightly modified by adding two diagonals to the 
+peer list, which in turn allowed these two techniques to constrain even more boxes on the 
+Sudoku grid.  For example, if the box A1 had a 7 in it, elimination would also constrain the 
+boxes D4, E5, F6, G7, H8, and I9 to not having a 7 in them in addition to all the other boxes 
+it constrains in a normal Sudoku.  
 
 ### Install
 
